@@ -10,7 +10,7 @@ const dateTimeFormat = Intl.DateTimeFormat("en-PH", { timeStyle: "medium", dateS
 
 export function ProjectCard(props: { project: Project }) {
   const { project } = props;
-  const { name, description, imagePath, dateCreated, tech, url } = project;
+  const { name, _id, description, imagePath, dateCreated, tech, url } = project;
   const [imageUrl, setImageUrl] = useState<string | null>(null);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ export function ProjectCard(props: { project: Project }) {
               </Typography>
               <Stack direction="row" gap={1} flexWrap="wrap">
                 {tech.map((t) => (
-                  <Chip variant="filled" label={t} />
+                  <Chip variant="filled" label={t} key={`${_id}_${t}`}/>
                 ))}
               </Stack>
             </Stack>
