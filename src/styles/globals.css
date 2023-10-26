@@ -4,7 +4,12 @@ body {
   overflow-x: hidden;
   margin: 0;
   background-image: url("/images/test.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top;
   color: #000;
+  scroll-behavior:smooth;
+  overflow-y: hidden;
 }
 
 @media (prefers-color-scheme: light) {
